@@ -1,0 +1,35 @@
+Recurrent Neural Networks (RNNs)
+
+Recurrent Neural Networks (RNNs) are a class of artificial neural networks designed for sequential data processing. Unlike traditional feedforward neural networks, RNNs have connections that loop back, allowing them to maintain a memory of previous inputs. This makes them particularly effective for tasks that involve time series, natural language processing (NLP), and other sequence-based data.
+
+Key Concepts of RNNs:
+Sequential Processing: The most distinguishing feature of RNNs is their ability to handle sequential data. They process inputs in a step-by-step manner, with each step depending not only on the current input but also on information from previous steps. This allows RNNs to capture temporal dependencies in data.
+
+Hidden State: RNNs maintain a hidden state, which acts as a memory, capturing the context of previous inputs. At each time step, the hidden state is updated based on both the new input and the hidden state from the previous time step. This recursive structure gives RNNs the ability to retain information over time.
+
+Weight Sharing: RNNs share the same weights across all time steps, which allows them to generalize better to sequences of varying lengths. This also reduces the number of parameters, making RNNs more efficient when dealing with sequences.
+
+Backpropagation Through Time (BPTT): Training RNNs involves a specialized version of the backpropagation algorithm called Backpropagation Through Time (BPTT). BPTT unrolls the network over time steps and computes the gradients to update weights. This enables RNNs to learn from sequential data and adjust the model accordingly.
+
+Challenges of RNNs:
+Vanishing and Exploding Gradients: RNNs can struggle to learn long-term dependencies due to the vanishing gradient problem, where gradients become too small to have a significant impact on weight updates during training. Similarly, exploding gradients occur when gradients grow too large. Both issues make it hard for standard RNNs to remember information over long sequences.
+
+Short-term Memory: Traditional RNNs are better at capturing short-term dependencies in data. For longer sequences, the network might lose information about earlier inputs as it progresses through the sequence.
+
+Advanced RNN Architectures:
+To address the limitations of traditional RNNs, more advanced variants have been developed:
+
+Long Short-Term Memory (LSTM): LSTMs are a popular type of RNN designed to combat the vanishing gradient problem. They introduce gating mechanisms (input, forget, and output gates) that regulate the flow of information, allowing the network to decide which information to keep or discard over time. This enables LSTMs to capture long-term dependencies more effectively than standard RNNs.
+
+Gated Recurrent Unit (GRU): GRUs are a simplified version of LSTMs, using fewer gates (update and reset gates). They are computationally efficient while still maintaining the ability to capture long-term dependencies, making them a popular alternative to LSTMs.
+
+Applications of RNNs:
+RNNs are widely used in tasks involving sequential or time-dependent data:
+
+Natural Language Processing (NLP): RNNs are used in tasks like machine translation, language modeling, and text generation. They can capture the context and structure of a sentence, enabling the generation of coherent sequences of words.
+
+Speech Recognition: In speech-to-text applications, RNNs can process continuous streams of audio data, maintaining a memory of previous sound patterns to recognize spoken words.
+
+Time Series Prediction: RNNs are applied in forecasting tasks, such as stock market predictions, weather forecasting, and demand forecasting. Their ability to learn temporal dependencies makes them well-suited for predicting future trends based on past data.
+
+Video Analysis: For tasks such as activity recognition in videos, RNNs can process frames as a sequence, learning patterns over time to detect specific actions or events.
