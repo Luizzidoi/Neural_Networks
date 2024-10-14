@@ -52,14 +52,14 @@ class_test = np_utils.to_categorical(y_test, 10)
 
 
 """ ---------------------------- Neural Networks structure ---------------------------- """
-# Stage 1 = Convolution operator
+# Stage 1 = Convolution operator (change in images pixels)
 classificator = Sequential()
 classificator.add(Conv2D(32, (3, 3), input_shape=(28, 28, 1), activation='relu'))
 # Only to improvements of neural network. Feature map normalization
 classificator.add(BatchNormalization())
-# Stage 2 = Pooling
+# Stage 2 = Pooling (emphasize best image features)
 classificator.add(MaxPooling2D(pool_size=(2, 2)))
-# Stage 3 = Flattening
+# Stage 3 = Flattening (transform format matrix to format vector)
 # classificador.add(Flatten())
 
 # Add one more convolution layer to results improvements
@@ -67,11 +67,11 @@ classificator.add(Conv2D(32, (3, 3), activation='relu'))
 # Only to neural network improvements, feature map normalization
 classificator.add(BatchNormalization())
 classificator.add(MaxPooling2D(pool_size=(2, 2)))
-# Stage 3 - Flattening
+# Stage 3 - Flattening (transform format matrix to format vector)
 # When add one more convolution layer, the Flattening need to be implemented only once in the end
 classificator.add(Flatten())
 
-# Stage 4 = Dense neural network creation 
+# Stage 4 - Dense neural network creation 
 classificator.add(Dense(units=128, activation='relu'))
 classificator.add(Dropout(0.2))
 classificator.add(Dense(units=128, activation='relu'))
