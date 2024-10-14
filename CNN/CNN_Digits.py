@@ -67,7 +67,7 @@ classificator.add(Conv2D(32, (3, 3), activation='relu'))
 # Only to neural network improvements, feature map normalization
 classificator.add(BatchNormalization())
 classificator.add(MaxPooling2D(pool_size=(2, 2)))
-# Stage 3
+# Stage 3 - Flattening
 # When add one more convolution layer, the Flattening need to be implemented only once in the end
 classificator.add(Flatten())
 
